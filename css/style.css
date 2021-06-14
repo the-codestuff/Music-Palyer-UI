@@ -1,0 +1,178 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/*==================== VARIABLES====================*/
+:root {
+
+/*========== Colors ==========*/
+    --title-color : #484848;
+    --light-color : #8e8e8e;
+    --background-color : #008c8c;
+
+
+/*========== Font SIZE ==========*/
+    --big-font-size:  1.5rem;
+    --normal-font-size: 1.1rem;
+
+/*========== Font FACE ==========*/
+
+    --body-font: 'Lato', sans-serif;
+
+/*========== Font WEIGHT ==========*/
+    --font-medium: 400;
+    --font-bold: 700;
+
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: var(--background-color);
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.card{
+    height: 390px;
+    width: 330px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+}
+.card__header{
+    position: relative;
+    height: 180px;
+    display: flex;
+}
+.card__photo{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+}
+.card__photo img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+}
+.card__photo::after{
+    content: '';
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+}
+
+
+.card__photo-animate{
+    animation: animate 7s infinite linear;
+}
+
+
+.card__body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 35px;
+}
+.card__title{
+    color: var(--title-color);
+    font-size: var(--big-font-size);
+    font-weight: var(--font-bold);
+}
+.card__subtitle{
+    margin-top: 5px;
+    color: var(--light-color);
+}
+.card__footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 32px;
+    position: relative;
+}
+.card__audio{
+    position: absolute;
+    bottom: -40px;
+}
+
+.card__waves-disable{
+    display: none;
+}
+.card__waves-active{
+    display: block;
+}
+
+.circle {
+    display: block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background: var(--background-color);
+    transition: 5s ease;
+    position: absolute;
+    top: 62px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    opacity: 0;
+  }
+
+.delay1 {
+    animation: waves 2.5s linear;
+    animation-delay: .1s;
+  }
+  
+.delay2 {
+    animation: waves 2.5s linear .7s forwards infinite;
+  }
+  
+.delay3 {
+    animation: waves 2.5s linear 1.3s forwards infinite;
+  }
+  
+.delay4 {
+    animation: waves 2.5s linear 1.9s forwards infinite;
+  }
+
+  @keyframes waves {
+    0% {
+      transform: scale(1);
+      opacity: 0.6;
+    }
+    
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+@keyframes animate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
